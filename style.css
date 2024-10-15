@@ -12,19 +12,22 @@
     justify-content: space-between; 
     align-items: center; 
     border-bottom: 15px solid #8ec4e9;
+    flex-wrap: wrap; /* ekran boyutu değişince aşagı kayar */
+
 }
 
 #logo{
-    font-size: 50px;
+    font-size: 3em;
     color: #2a4422;
     font-family: 'Times New Roman', Times, serif;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 #navigationust{
     display: flex; 
-    margin-right: 40px; 
-    font-size: 20px;
+    margin-right: 20px; 
+    flex-wrap: wrap; /* meün küçüldüğünde alt satıra geç */
+
 }
 
 #navigationust ul { 
@@ -35,7 +38,7 @@
 
 #navigationust li { 
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 10px; 
 }
 
 #navigationust a { 
@@ -49,28 +52,28 @@
 }
 
 /* Cover photo ayarlari */
+
+.kapakfoto {
+    position: relative; /* Üstüne yazı yerleştirebilmek için relative */
+}
+
 .kapakfoto img{
-    height: 600px;
     width: 100%;
+    height: 700px;
 }
 
 #kapakustuyazi{
     position: absolute;
-    top: 30%;
+    top: 10%; /* Sol üst köşeye daha yakın olacak şekilde */
+    left: 5%; /* Soldan biraz içeride */
     color: chocolate;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    background-color: #f8f9fa;
+    font-size: 2vw; /* Responsive yazı boyutu */
+    background-color: rgba(248, 249, 250, 0.7); /* Transparan arka plan */
     padding: 10px;
-}
-
-#kapakustuaciklama{
-    position: absolute;
-    top: 34%;
-    color: #833700;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    font-size: 17px;
-    background-color: #f8f9fa70;
-    padding: 10px;
+    text-align: left; /* Yazı sola yaslı */
+    width: auto; /* Genişlik içeriğe göre otomatik ayarlanacak */
+    max-width: 400px; /* Çok geniş olmaması için maksimum genişlik */
 }
 
 /* İçerik Section */
@@ -118,7 +121,7 @@ article {
     display: flex;
     flex-wrap: wrap; 
     justify-content: center; 
-    margin: 20px;
+    margin: 5%; 
 }
 
 .urunkarti {
@@ -135,7 +138,6 @@ article {
     height: 150px; 
     border-radius: 5px; 
 }
-
 
 /* Form Ayarları İletişim için*/
 #form {
@@ -206,3 +208,58 @@ input[type="reset"]:hover {
 
 }
 
+/* rresponsive */
+
+/* Tablet ve altı boyutlar için (768px'den küçük) */
+@media only screen and (max-width: 768px) {
+    #logo {
+        font-size: 2em;
+        margin-left: 10px;
+    }
+
+    #navigationust {
+        margin-right: 10px;
+        flex-direction: column; /* Menü dikey görünsün diye */
+    }
+
+    .banner {
+        padding: 10px; /* Banner daha küçük görünecek*/
+    }
+
+    .kapakfoto img {
+        height: 400px; /* Kapak fotoğrafı daha küçük ekranlar için */
+    }
+}
+
+/* Mobil boyutlar için (480px'den küçük) */
+@media only screen and (max-width: 480px) {
+    #logo {
+        font-size: 1.5em;
+    }
+
+    #navigationust {
+        font-size: 1em; /* Menü fontları daha kuck olacak */
+    }
+
+    .kapakfoto img {
+        height: 250px; /* Kapak fotoğrafı iyice küçülsün */
+    }
+}
+
+/* Responsive düzenlemeler */
+@media only screen and (max-width: 768px) {
+    #kapakustuyazi {
+        font-size: 4vw; /* Tabletler için yazı boyutunu küçült */
+        top: 5%; /* Daha üstte durabilir */
+        left: 5%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #kapakustuyazi {
+        font-size: 5vw; /* Mobil cihazlar için yazı boyutu */
+        top: 5%; /* Mobilde üstte olacak */
+        left: 5%; /* Mobilde biraz içeride */
+        width: 80%; /* Daha fazla alan kaplasın */
+    }
+}
