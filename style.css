@@ -124,7 +124,7 @@ article {
     margin: 5%; 
 }
 
-.urunkarti {
+.urunkarti{
     background-color: #f8f9fa;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -133,10 +133,23 @@ article {
     width: 200px; 
 }
 
-.urunkarti img {
+.urunkarti img{
     width: 100%; 
     height: 150px; 
-    border-radius: 5px; 
+    border-radius: 5px;
+}
+
+.urunkarti h3#urunkategori{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(191, 218, 219);
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease; 
+}
+
+.urunkarti:hover h3#urunkategori {
+    opacity: 1; 
 }
 
 /* Form Ayarları İletişim için*/
@@ -208,6 +221,15 @@ input[type="reset"]:hover {
 
 }
 
+/* Hakkımızda set */
+
+#hakkımızdaparagraf{
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: 23px;
+}
+
 /* rresponsive */
 
 /* Tablet ve altı boyutlar için (768px'den küçük) */
@@ -257,9 +279,9 @@ input[type="reset"]:hover {
 
 @media only screen and (max-width: 480px) {
     #kapakustuyazi {
-        font-size: 5vw; /* Mobil cihazlar için yazı boyutu */
-        top: 5%; /* Mobilde üstte olacak */
-        left: 5%; /* Mobilde biraz içeride */
-        width: 80%; /* Daha fazla alan kaplasın */
+        font-size: 5vw; 
+        top: 5%; 
+        left: 5%; 
+        width: 80%; 
     }
 }
